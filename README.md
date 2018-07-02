@@ -1,8 +1,6 @@
 crazyflie_ros-pwm-control
 =============
 
-## Installation
-
 Clone the package into your catkin workspace:
 ```
 git clone https://github.com/josephyaconelli/crazyflie_ros-pwm-control.git
