@@ -27,3 +27,5 @@ uint16 m2
 uint16 m3
 uint16 m4
 ```
+
+Intended for use in conjunction with https://github.com/josephyaconelli/crazyflie-firmware-pwm-control
