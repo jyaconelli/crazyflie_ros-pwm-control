@@ -19,7 +19,7 @@ To build and run:
 ```
 If you have issues running-- check the run.bash script. You may need to change the joy_dev location or crazyflie uri.
 
-For more information, lok at the readme for https://github.com/whoenig/crazyflie_ros.git
+For more information, look at the readme for https://github.com/whoenig/crazyflie_ros.git
 Most of it will still pertain to this project.
 
 Control messages are send on the /crazyflie/cmd_vel topic in the form of /crazyflie_driver/MotorControl messages:
