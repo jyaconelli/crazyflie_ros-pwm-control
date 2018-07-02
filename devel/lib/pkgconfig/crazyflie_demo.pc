@@ -1,0 +1,8 @@
+prefix=/home/joseph/other_research/crazyflie_ros/devel
+
+Name: crazyflie_demo
+Description: Description of crazyflie_demo
+Version: 0.0.1
+Cflags: 
+Libs: -L/home/joseph/other_research/crazyflie_ros/devel/lib 
+Requires: roscpp crazyflie_driver

@@ -1,0 +1,8 @@
+prefix=/home/joseph/other_research/crazyflie_ros/devel
+
+Name: hector_quadrotor_pose_estimation
+Description: Description of hector_quadrotor_pose_estimation
+Version: 0.3.5
+Cflags: -I/home/joseph/other_research/crazyflie_ros/src/hector_quadrotor/hector_quadrotor_pose_estimation/include
+Libs: -L/home/joseph/other_research/crazyflie_ros/devel/lib -lquadrotor_pose_estimation_nodelet -lquadrotor_pose_estimation_node
+Requires: hector_pose_estimation hector_uav_msgs

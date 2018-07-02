@@ -1,0 +1,8 @@
+prefix=/home/joseph/other_research/crazyflie_ros/devel
+
+Name: hector_quadrotor_description
+Description: Description of hector_quadrotor_description
+Version: 0.3.5
+Cflags: 
+Libs: -L/home/joseph/other_research/crazyflie_ros/devel/lib 
+Requires: 

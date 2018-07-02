@@ -1,0 +1,8 @@
+prefix=/home/joseph/other_research/crazyflie_ros/devel
+
+Name: hector_gazebo_worlds
+Description: Description of hector_gazebo_worlds
+Version: 0.5.0
+Cflags: 
+Libs: -L/home/joseph/other_research/crazyflie_ros/devel/lib 
+Requires: 

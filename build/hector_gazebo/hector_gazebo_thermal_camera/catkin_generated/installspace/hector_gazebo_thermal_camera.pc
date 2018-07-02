@@ -1,0 +1,8 @@
+prefix=/home/joseph/other_research/crazyflie_ros/install
+
+Name: hector_gazebo_thermal_camera
+Description: Description of hector_gazebo_thermal_camera
+Version: 0.5.0
+Cflags: -I/home/joseph/other_research/crazyflie_ros/install/include
+Libs: -L/home/joseph/other_research/crazyflie_ros/install/lib 
+Requires: gazebo_plugins

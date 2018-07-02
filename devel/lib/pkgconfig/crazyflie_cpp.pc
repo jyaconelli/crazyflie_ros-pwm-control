@@ -1,0 +1,8 @@
+prefix=/home/joseph/other_research/crazyflie_ros/devel
+
+Name: crazyflie_cpp
+Description: Description of crazyflie_cpp
+Version: 0.0.1
+Cflags: -I/home/joseph/other_research/crazyflie_ros/src/crazyflie_cpp/include
+Libs: -L/home/joseph/other_research/crazyflie_ros/devel/lib -lcrazyflie_cpp
+Requires: 

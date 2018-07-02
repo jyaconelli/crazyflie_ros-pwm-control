@@ -1,0 +1,8 @@
+prefix=/home/joseph/other_research/crazyflie_ros/install
+
+Name: crazyflie_driver
+Description: Description of crazyflie_driver
+Version: 0.0.1
+Cflags: -I/home/joseph/other_research/crazyflie_ros/install/include
+Libs: -L/home/joseph/other_research/crazyflie_ros/install/lib 
+Requires: message_runtime std_msgs tf crazyflie_cpp

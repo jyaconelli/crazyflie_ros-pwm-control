@@ -1,0 +1,8 @@
+prefix=/home/joseph/other_research/crazyflie_ros/install
+
+Name: hector_gazebo_plugins
+Description: Description of hector_gazebo_plugins
+Version: 0.5.0
+Cflags: -I/home/joseph/other_research/crazyflie_ros/install/include
+Libs: -L/home/joseph/other_research/crazyflie_ros/install/lib 
+Requires: roscpp std_msgs geometry_msgs nav_msgs tf message_runtime
