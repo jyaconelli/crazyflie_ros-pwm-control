@@ -286,6 +286,21 @@ crazyflie_driver_geneus/fast:
 .PHONY : crazyflie_driver_geneus/fast
 
 # Convenience name for target.
+crazyflie_driver/CMakeFiles/crazyflie_logger.dir/rule:
+	cd /home/joseph/other_research/crazyflie_ros/build && $(MAKE) -f CMakeFiles/Makefile2 crazyflie_driver/CMakeFiles/crazyflie_logger.dir/rule
+.PHONY : crazyflie_driver/CMakeFiles/crazyflie_logger.dir/rule
+
+# Convenience name for target.
+crazyflie_logger: crazyflie_driver/CMakeFiles/crazyflie_logger.dir/rule
+
+.PHONY : crazyflie_logger
+
+# fast build rule for target.
+crazyflie_logger/fast:
+	cd /home/joseph/other_research/crazyflie_ros/build && $(MAKE) -f crazyflie_driver/CMakeFiles/crazyflie_logger.dir/build.make crazyflie_driver/CMakeFiles/crazyflie_logger.dir/build
+.PHONY : crazyflie_logger/fast
+
+# Convenience name for target.
 crazyflie_driver/CMakeFiles/_crazyflie_driver_generate_messages_check_deps_Hover.dir/rule:
 	cd /home/joseph/other_research/crazyflie_ros/build && $(MAKE) -f CMakeFiles/Makefile2 crazyflie_driver/CMakeFiles/_crazyflie_driver_generate_messages_check_deps_Hover.dir/rule
 .PHONY : crazyflie_driver/CMakeFiles/_crazyflie_driver_generate_messages_check_deps_Hover.dir/rule
@@ -672,6 +687,33 @@ src/crazyflie_add.cpp.s:
 	cd /home/joseph/other_research/crazyflie_ros/build && $(MAKE) -f crazyflie_driver/CMakeFiles/crazyflie_add.dir/build.make crazyflie_driver/CMakeFiles/crazyflie_add.dir/src/crazyflie_add.cpp.s
 .PHONY : src/crazyflie_add.cpp.s
 
+src/crazyflie_logger.o: src/crazyflie_logger.cpp.o
+
+.PHONY : src/crazyflie_logger.o
+
+# target to build an object file
+src/crazyflie_logger.cpp.o:
+	cd /home/joseph/other_research/crazyflie_ros/build && $(MAKE) -f crazyflie_driver/CMakeFiles/crazyflie_logger.dir/build.make crazyflie_driver/CMakeFiles/crazyflie_logger.dir/src/crazyflie_logger.cpp.o
+.PHONY : src/crazyflie_logger.cpp.o
+
+src/crazyflie_logger.i: src/crazyflie_logger.cpp.i
+
+.PHONY : src/crazyflie_logger.i
+
+# target to preprocess a source file
+src/crazyflie_logger.cpp.i:
+	cd /home/joseph/other_research/crazyflie_ros/build && $(MAKE) -f crazyflie_driver/CMakeFiles/crazyflie_logger.dir/build.make crazyflie_driver/CMakeFiles/crazyflie_logger.dir/src/crazyflie_logger.cpp.i
+.PHONY : src/crazyflie_logger.cpp.i
+
+src/crazyflie_logger.s: src/crazyflie_logger.cpp.s
+
+.PHONY : src/crazyflie_logger.s
+
+# target to generate assembly for a file
+src/crazyflie_logger.cpp.s:
+	cd /home/joseph/other_research/crazyflie_ros/build && $(MAKE) -f crazyflie_driver/CMakeFiles/crazyflie_logger.dir/build.make crazyflie_driver/CMakeFiles/crazyflie_logger.dir/src/crazyflie_logger.cpp.s
+.PHONY : src/crazyflie_logger.cpp.s
+
 src/crazyflie_server.o: src/crazyflie_server.cpp.o
 
 .PHONY : src/crazyflie_server.o
@@ -719,6 +761,7 @@ help:
 	@echo "... crazyflie_driver_genlisp"
 	@echo "... crazyflie_driver_generate_messages_lisp"
 	@echo "... crazyflie_driver_geneus"
+	@echo "... crazyflie_logger"
 	@echo "... _crazyflie_driver_generate_messages_check_deps_Hover"
 	@echo "... _crazyflie_driver_generate_messages_check_deps_GenericLogData"
 	@echo "... _crazyflie_driver_generate_messages_check_deps_StartTrajectory"
@@ -747,6 +790,9 @@ help:
 	@echo "... src/crazyflie_add.o"
 	@echo "... src/crazyflie_add.i"
 	@echo "... src/crazyflie_add.s"
+	@echo "... src/crazyflie_logger.o"
+	@echo "... src/crazyflie_logger.i"
+	@echo "... src/crazyflie_logger.s"
 	@echo "... src/crazyflie_server.o"
 	@echo "... src/crazyflie_server.i"
 	@echo "... src/crazyflie_server.s"

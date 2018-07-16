@@ -7,12 +7,12 @@
   <arg name="pitch_trim" default="0" />
   <arg name="enable_logging" default="True" />
   <arg name="use_ros_time" default="True" />
-  <arg name="enable_logging_imu" default="True" />
-  <arg name="enable_logging_temperature" default="True" />
-  <arg name="enable_logging_magnetic_field" default="True" />
-  <arg name="enable_logging_pressure" default="True" />
-  <arg name="enable_logging_battery" default="True" />
-  <arg name="enable_logging_packets" default="True" />
+  <arg name="enable_logging_imu" default="False" />
+  <arg name="enable_logging_temperature" default="False" />
+  <arg name="enable_logging_magnetic_field" default="False" />
+  <arg name="enable_logging_pressure" default="False" />
+  <arg name="enable_logging_battery" default="False" />
+  <arg name="enable_logging_packets" default="False" />
 
   <node pkg="crazyflie_driver" type="crazyflie_add" name="crazyflie_add" output="screen">
     <param name="uri" value="$(arg uri)" />
@@ -27,5 +27,12 @@
     <param name="enable_logging_pressure" value="$(arg enable_logging_pressure)" />
     <param name="enable_logging_battery" value="$(arg enable_logging_battery)" />
     <param name="enable_logging_packets" value="$(arg enable_logging_packets)"/>
+    <rosparam>
+      genericLogTopics: ["log_compact_imu", "state_data"]
+      genericLogTopicFrequencies: [1000, 10]
+      genericLogTopic_log_compact_imu_Variables: ["compactImu.l_xyz", "compactImu.a_xyz"]
+      genericLogTopic_state_data_Variables: ["stabilizer.pitch", "stabilizer.roll", "stabilizer.yaw"]
+      <!--genericLogTopic_state_data_Variables: ["compactImu.a_xyz", "compactImu.l_xyz", "motorCompact.pwms", "stabilizer.pitch", "stabilizer.roll", "stabilizer.thrust", "stabilizer.yaw"]-->
+    </rosparam>
   </node>
 </launch>

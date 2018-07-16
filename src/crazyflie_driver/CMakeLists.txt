@@ -119,6 +119,18 @@ target_link_libraries(crazyflie_add
   ${catkin_LIBRARIES}
 )
 
+add_executable(crazyflie_logger
+  src/crazyflie_logger.cpp
+)
+
+target_link_libraries(crazyflie_logger
+  ${catkin_LIBRARIES}
+)
+
+add_dependencies(crazyflie_logger
+  crazyflie_driver_generate_messages_cpp
+)
+
 #############
 ## Install ##
 #############

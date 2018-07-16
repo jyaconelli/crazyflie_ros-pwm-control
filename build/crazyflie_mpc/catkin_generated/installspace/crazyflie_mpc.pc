@@ -1,0 +1,8 @@
+prefix=/home/joseph/other_research/crazyflie_ros/install
+
+Name: crazyflie_mpc
+Description: Description of crazyflie_mpc
+Version: 0.0.0
+Cflags: -I/home/joseph/other_research/crazyflie_ros/install/include
+Libs: -L/home/joseph/other_research/crazyflie_ros/install/lib 
+Requires: roscpp rospy std_msgs message_runtime crazyflie_driver

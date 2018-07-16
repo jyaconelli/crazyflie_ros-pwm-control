@@ -317,48 +317,19 @@ void cmdPositionSetpoint(
   }
 
   void cmdVelChanged(
-    //const geometry_msgs::Twist::ConstPtr& msg)
     const crazyflie_driver::MotorControl::ConstPtr& msg)
   {
     if (!m_isEmergency) {
-      //float roll = std::min<float>(std::max<float>(msg->linear.y, 0.0f), 60000.f);
-      //float pitch = std::min<float>(std::max<float>(msg->linear.x, 0.0f), 60000.f);
-      //float yawrate = std::min<float>(std::max<float>(msg->angular.z, 0.0f), 60000.f);
 
-      //ROSINFO("IS ANYONE THERE???");
-
-      //ROS_FATAL("OH MY GOSH PLEASE SHOW UP!");
       uint16_t m1 = std::min<uint16_t>(std::max<float>(msg->m1, 0.f), 60000);
       uint16_t m2 = std::min<uint16_t>(std::max<float>(msg->m2, 0.f), 60000);
       uint16_t m3 = std::min<uint16_t>(std::max<float>(msg->m3, 0.f), 60000);
       uint16_t m4 = std::min<uint16_t>(std::max<float>(msg->m4, 0.f), 60000);
-      ROS_INFO("cmdVelChanged called");
 
-      //uint16_t m1 = std::min<uint16_t>(std::max<float>(msg->linear.z, 0.f), 60000);
-      //uint16_t m2 = std::min<uint16_t>(std::max<float>(msg->linear.x, 0.f), 60000);
-      //uint16_t m3 = std::min<uint16_t>(std::max<float>(msg->linear.y, 0.f), 60000);
-      //uint16_t m4 = std::min<uint16_t>(std::max<float>(msg->angular.z, 0.f), 60000);
-      //uint8_t r =     msg->linear.y + m_roll_trim;
-      //uint8_t p =  - (msg->linear.x + m_pitch_trim);
-      //int y = (int)    msg->angular.z;
-      //int t = std::min<int>(std::max<float>(msg->linear.z, 0.0), 60000);
-      
       uint32_t packed = ((m1 & 0xFF00) >> 8) + ((m2 & 0xFF00)) + ((m3 & 0xFF00) << 8) + ((m4 & 0xFF00) << 16);
-      //FILE *fptr;
-      //fptr = fopen("~/test.txt", "w");
-      ROS_INFO("m1: %X\tm2: %X\tm3: %X\tm4: %X\tpacked: %X\n",m1, m2, m3, m4, packed);
-      //fclose(fptr);
-      //ROSINFO("packed : %X\n", packed);
 
-      //float roll;
-      //memcpy(&roll, &packed, sizeof(float));
-      //ROS_INFO("ROLL PACKED: %X", *(int *)&roll);
+      ROS_INFO("packed: %X ", packed);
 
-      //float pitch = - (msg->linear.x + m_pitch_trim);
-      //float yawrate = msg->angular.z;
-      //uint16_t thrust = std::min<uint16_t>(std::max<float>(msg->linear.z, 0.0), 60000);
-      
-      //m_cf.sendSetpoint(roll, pitch, yawrate, thrust);
       m_cf.sendSetpoint(packed);
       m_sentSetpoint = true;
     }
@@ -367,7 +338,6 @@ void cmdPositionSetpoint(
   void cmdFullStateSetpoint(
     const crazyflie_driver::FullState::ConstPtr& msg)
   {
-    //ROS_INFO("got a full state setpoint");
     if (!m_isEmergency) {
       float x = msg->pose.position.x;
       float y = msg->pose.position.y;
@@ -394,7 +364,6 @@ void cmdPositionSetpoint(
         qx, qy, qz, qw,
         rollRate, pitchRate, yawRate);
       m_sentSetpoint = true;
-      //ROS_INFO("set a full state setpoint");
     }
   }
 

@@ -1,0 +1,2 @@
+set(crazyflie_mpc_MESSAGE_FILES "/home/joseph/other_research/crazyflie_ros/src/crazyflie_mpc/msg/MotorControl.msg;/home/joseph/other_research/crazyflie_ros/src/crazyflie_mpc/msg/GenericLogData.msg;/home/joseph/other_research/crazyflie_ros/src/crazyflie_mpc/msg/LogBlock.msg")
+set(crazyflie_mpc_SERVICE_FILES "")

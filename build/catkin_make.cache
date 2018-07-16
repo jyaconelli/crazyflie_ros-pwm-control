@@ -1,2 +1,2 @@
-crazyflie:crazyflie_controller:crazyflie_cpp:crazyflie_demo:crazyflie_description:crazyflie_driver:crazyflie_tools
+crazyflie:crazyflie_controller:crazyflie_cpp:crazyflie_demo:crazyflie_description:crazyflie_driver:crazyflie_mpc:crazyflie_tools
 -DCATKIN_DEVEL_PREFIX=/home/joseph/other_research/crazyflie_ros/devel -DCMAKE_INSTALL_PREFIX=/home/joseph/other_research/crazyflie_ros/install -G Unix Makefiles
