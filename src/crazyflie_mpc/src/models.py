@@ -758,11 +758,15 @@ def simulate_learned(model, actions, generalNN = True, x0=[]):
         x0 = np.zeros(model.x_dim,1)
 
     X = [x0]
+    elapsed = 0
     for a in actions:
         if generalNN:
+            st = utils_data.millis()
             xnext = predict_nn(model, x0, a, model.state_idx_l)
+            et = utils_data.millis()
+            elapsed += (et - st)
         else:
             xnext = X[-1].flatten() + model.predict(X[-1], a)
         X.append(xnext)
-
+    #print "NN for ", len(actions), " actions: ", (elapsed / len(actions)), " per action"
     return np.array(X)

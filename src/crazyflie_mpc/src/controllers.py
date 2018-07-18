@@ -274,11 +274,15 @@ class MPController(Controller):
 
             # simulates actions on learned dynamics, need to fill in matrix
             X_sim = [] # np.tile(current_state,(N,1))  # tiled matrix of x0 = current_state
+            before_nn_time = time.time()
             for n in range(N):
+                st = time.time()
                 seq_sim = simulate_learned(self.dynamics_model, actions_seq[n,:,:], x0=current_state)
+                et = time.time()
+                #print "simulate learned: ", (et - st)
                 # append sequence to array
                 X_sim.append(seq_sim)
-
+            after_nn_time = time.time()
             # print('checking shapes')
             # print(np.shape(X_sim))
             # print(np.shape(actions_seq))
@@ -298,6 +302,8 @@ class MPController(Controller):
             # print(time.time()-start_time)
 
         self.i += 1
+        end_time = time.time()
+        #print "Before NN: ", (before_nn_time - start_time), " NN: ", (after_nn_time - before_nn_time), " After NN: ", (end_time - after_nn_time), " Total: ", (end_time - start_time)
 
         return self.control
 

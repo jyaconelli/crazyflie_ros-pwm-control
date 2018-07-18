@@ -26,8 +26,8 @@ from crazyflie_driver.msg import MotorControl, GenericLogData, LogBlock
 rp = rospkg.RosPack()
 
 #model_path = os.path.join(rp.get_path("crazyflie_mpc"), "src", "2018-07-12_general_temp.pth")
-#model_path = os.path.join(rp.get_path("crazyflie_mpc"), "src", "clean_flie_hover_long.pth")
-model_path = os.path.join(rp.get_path("crazyflie_mpc"), "src", "9_state_200_w.pth")
+model_path = os.path.join(rp.get_path("crazyflie_mpc"), "src", "clean_flie_hover_long.pth")
+#model_path = os.path.join(rp.get_path("crazyflie_mpc"), "src", "9_state_200_w.pth")
 #model_path = os.path.join(rp.get_path("crazyflie_mpc"), "src", "large_state_pnn.pth")
 
 x_prev = np.zeros([12])
@@ -76,7 +76,7 @@ def nodecontroller():
 
 
 ########################################################################
-  testTime = 5000  	# Time to run realtime test, in ms
+  testTime = 15000  	# Time to run realtime test, in ms
 
 
 
@@ -107,7 +107,8 @@ def nodecontroller():
 
 
   while  millis() < testTime:
-    if not rospy.is_shutdown():
+    while not rospy.is_shutdown():
+        time_beg = millis()
 #        key = getkey()
 #        if key == 'q':
 #          msg = MotorControl()
@@ -125,7 +126,10 @@ def nodecontroller():
         # generate new u
         #u = np.zeros([4])
         #if begunReceiving:
+        #times = millis()
         u = mpc1.update(x_prev)   # UPDATE SHOULD RETURN PWMs
+        #timee = millis()
+        #print "elapsed: ", (timee - times)
         #print("U UPDATEED: ", u)
         #print("U IS: ", u)
 
@@ -155,6 +159,7 @@ def nodecontroller():
         totalRuns += 1
         print "Average = ", (totalTimes/totalRuns)
         print "Hz = ", (totalRuns / (millis() / 1000))
+        print "loop: ", (millis() - time_beg), "\n\n\n\n\n\n\n\n\n\n\n"
         rate.sleep()
 
 
